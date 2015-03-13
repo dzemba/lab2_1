@@ -28,7 +28,7 @@ public class BinarySearchTest {
 		int key = 5;
 		//sequency[0] = key;
 		SearchResult searchResult = BinarySearch.search(key,sequency);
-		assertFalse(searchResult.isFound());
+		assertThat(false, is(searchResult.isFound()));
 	}
 	
 	@Test
@@ -46,7 +46,9 @@ public class BinarySearchTest {
 		
 
 		SearchResult searchResult = BinarySearch.search(key,sequency);
-		assertEquals(1,searchResult.getPosition());
+		
+		assertThat(1, is(searchResult.getPosition()));
+
 	}
 	
 	
@@ -58,7 +60,7 @@ public class BinarySearchTest {
 
 
 		SearchResult searchResult = BinarySearch.search(7,sequency);
-		assertEquals(7,searchResult.getPosition());
+		assertThat(7,is(searchResult.getPosition()));
 	}
 	
 	
@@ -69,7 +71,7 @@ public class BinarySearchTest {
 		
 
 		SearchResult searchResult = BinarySearch.search(4,sequency);
-		assertEquals(sequency.length/2+1,searchResult.getPosition());
+		assertThat(sequency.length/2+1,is(searchResult.getPosition()));
 	}
 	
 	public void testMorThanOneIsMiddleInSequenceSecond() throws Exception{
@@ -79,7 +81,7 @@ public class BinarySearchTest {
 		
 
 		SearchResult searchResult = BinarySearch.search(4,sequency);
-		assertEquals(sequency.length/2,searchResult.getPosition());
+		assertThat(sequency.length/2,is(searchResult.getPosition()));
 	}
 	
 	public void testMorThanOneIsNotInSequence() throws Exception{
@@ -88,6 +90,6 @@ public class BinarySearchTest {
 		
 
 		SearchResult searchResult = BinarySearch.search(9,sequency);
-		assertFalse(searchResult.isFound());
+		assertThat(false,is(searchResult.isFound()));
 	}
 }
