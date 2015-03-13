@@ -27,7 +27,7 @@ public class BinarySearchTest {
 	}
 	
 	@Test
-	public void testEMorThanOneIsFirstInSequence() throws Exception{
+	public void testMorThanOneIsFirstInSequence() throws Exception{
 		
 		int sequencyLenght = 7;
 		int[] sequency = new int[sequencyLenght];
@@ -39,9 +39,21 @@ public class BinarySearchTest {
 			sequency[iterator] = generator.nextInt(10)+3;
 		}
 		
-		sequency[0] = key;
+
 		SearchResult searchResult = BinarySearch.search(key,sequency);
 		assertEquals(1,searchResult.getPosition());
+	}
+	
+	
+	@Test
+	public void testMorThanOneIsLastInSequence() throws Exception{
+		
+		int sequencyLenght = 7;
+		int[] sequency = new int[] {1,2,3,4,5,6,7};
+
+
+		SearchResult searchResult = BinarySearch.search(7,sequency);
+		assertEquals(7,searchResult.getPosition());
 	}
 	
 	
