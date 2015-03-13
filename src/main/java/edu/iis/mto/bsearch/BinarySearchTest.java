@@ -78,6 +78,11 @@ public class BinarySearchTest {
 	}
 	
 	public void testMorThanOneIsNotInSequence() throws Exception{
+		int[] sequency = new int[] {1,2,3,4,5,6,7,8};
+
 		
+
+		SearchResult searchResult = BinarySearch.search(9,sequency);
+		assertFalse(searchResult.isFound());
 	}
 }
