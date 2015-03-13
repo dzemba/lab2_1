@@ -48,7 +48,7 @@ public class BinarySearchTest {
 	@Test
 	public void testMorThanOneIsLastInSequence() throws Exception{
 		
-		int sequencyLenght = 7;
+	
 		int[] sequency = new int[] {1,2,3,4,5,6,7};
 
 
@@ -57,10 +57,27 @@ public class BinarySearchTest {
 	}
 	
 	
+	public void testMorThanOneIsMiddleInSequence() throws Exception{
 	
-	@Test
-	public void test() {
-		//fail("Not yet implemented");
-	}
+		int[] sequency = new int[] {1,2,3,4,5,6,7};
 
+		
+
+		SearchResult searchResult = BinarySearch.search(4,sequency);
+		assertEquals(sequency.length/2+1,searchResult.getPosition());
+	}
+	
+	public void testMorThanOneIsMiddleInSequenceSecond() throws Exception{
+		
+		int[] sequency = new int[] {1,2,3,4,5,6,7,8};
+
+		
+
+		SearchResult searchResult = BinarySearch.search(4,sequency);
+		assertEquals(sequency.length/2,searchResult.getPosition());
+	}
+	
+	public void testMorThanOneIsNotInSequence() throws Exception{
+		
+	}
 }
