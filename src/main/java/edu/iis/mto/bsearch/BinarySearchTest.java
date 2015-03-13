@@ -92,4 +92,18 @@ public class BinarySearchTest {
 		SearchResult searchResult = BinarySearch.search(9,sequency);
 		assertThat(false,is(searchResult.isFound()));
 	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void seqIsEqNull()
+	{
+		int[] sequency = new int[0];
+		BinarySearch.search(1, sequency);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void seqIsNotSorted()
+	{
+		int[] sequency = {6,4,8,3,2,8};
+		BinarySearch.search(1, sequency);
+	}
 }
