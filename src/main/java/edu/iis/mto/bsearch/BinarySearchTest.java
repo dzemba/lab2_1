@@ -4,7 +4,12 @@ import static org.junit.Assert.*;
 
 import java.util.Random;
 
+import junit.framework.Assert;
+
 import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.*;
+import org.hamcrest.Matcher;
 
 public class BinarySearchTest {
 	
@@ -14,7 +19,7 @@ public class BinarySearchTest {
 		int key = 5;
 		sequency[0] = key;
 		SearchResult searchResult = BinarySearch.search(key,sequency);
-		assertTrue(searchResult.isFound());
+		assertThat(true, is(searchResult.isFound()));
 	}
 	
 	@Test
